@@ -113,6 +113,14 @@ export const useResumeStore = defineStore('resume', {
     },
     actions: {
         initialize() {
+            if (Object.keys(this.resumes).length === 0) {
+                const settingsStore = useSettingsStore();
+                const language = settingsStore.settings.locale || 'en';
+                const id = this.createResume({ language });
+                this.activeResumeId = id;
+                return;
+            }
+
             Object.keys(this.resumes).forEach((resumeId) => {
                 const resume = this.resumes[resumeId];
                 if (resume === undefined) {
