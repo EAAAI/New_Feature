@@ -122,7 +122,7 @@ export default defineNuxtConfig({
     },
 
     pwa: {
-        registerType: 'prompt',
+        registerType: 'autoUpdate',
         manifest: {
             name: 'NewCv',
             short_name: 'NewCv',

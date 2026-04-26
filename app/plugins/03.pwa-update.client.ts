@@ -21,13 +21,13 @@ export default defineNuxtPlugin(async () => {
     watch(needRefresh, (value) => {
         if (!value || notified) return;
         notified = true;
+
+        // Ensure users move to the latest build automatically on static hosting.
+        updateServiceWorker(true);
+
         toast.info(t('notifications.updateAvailable'), {
             description: t('notifications.updateAvailableDescription'),
-            duration: Infinity,
-            action: {
-                label: t('notifications.updateRefresh'),
-                onClick: () => updateServiceWorker(true),
-            },
+            duration: 4000,
         });
     });
 });
