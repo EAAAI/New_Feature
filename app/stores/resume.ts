@@ -26,7 +26,6 @@ interface ResumeStoreState {
     nextId: number;
     isLoading: boolean;
     error: string | null;
-    error: string | null;
 }
 export const useResumeStore = defineStore('resume', {
     state: (): ResumeStoreState => ({
@@ -34,7 +33,6 @@ export const useResumeStore = defineStore('resume', {
         activeResumeId: null,
         nextId: 1,
         isLoading: false,
-        error: null,
         error: null,
     }),
     persist: true,

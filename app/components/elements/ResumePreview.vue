@@ -280,7 +280,7 @@ const turnstileRef = ref<InstanceType<typeof InvisibleTurnstile> | null>(null);
 
 const { t } = useI18n();
 const { generatePreview, downloadPDF, downloadSVG, downloadTypst, downloadTypstText } = useResumeGenerator();
-const { isReady: typstReady } = useTypstLoader();
+const { isReady: typstReady, error: typstInitError } = useTypstLoader();
 const settingsStore = useSettingsStore();
 const resumeStore = useResumeStore();
 const { resumeData, activeResume } = storeToRefs(resumeStore);
@@ -314,20 +314,36 @@ const generatePreviewInternal = async () => {
     error.value = null;
     try {
         if (!typstReady.value) {
-            await new Promise((resolve) => {
-                const unwatch = watch(
-                    typstReady,
-                    (ready) => {
+            await new Promise<void>((resolve, reject) => {
+                const timeoutId = window.setTimeout(() => {
+                    stop();
+                    reject(new Error('Typst initialization timeout'));
+                }, 15000);
+
+                const stop = watch(
+                    [typstReady, typstInitError],
+                    ([ready, initError]) => {
                         if (ready) {
-                            unwatch();
-                            resolve(void 0);
+                            window.clearTimeout(timeoutId);
+                            stop();
+                            resolve();
+                            return;
+                        }
+                        if (initError) {
+                            window.clearTimeout(timeoutId);
+                            stop();
+                            reject(new Error(initError));
                         }
                     },
+                    { immediate: true },
                 );
             });
         }
         if (!typstReady.value) {
             return;
+        }
+        if (typstInitError.value) {
+            throw new Error(typstInitError.value);
         }
         if (!resumeStore.activeResume) return;
         previewContent.value = await generatePreview(resumeStore.activeResume);

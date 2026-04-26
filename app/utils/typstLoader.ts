@@ -3,7 +3,25 @@ import { preloadRemoteFonts } from '@myriaddreamin/typst.ts/dist/esm/options.ini
 
 import type { TypstLoaderState } from '~/types/typst';
 
-const CACHE_NAME = 'typst-assets-v1';
+const CACHE_NAME = 'typst-assets-v2';
+
+function normalizeBaseUrl(baseUrl: string): string {
+    if (!baseUrl) return '/';
+    return baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
+}
+
+function getAppBaseUrl(): string {
+    if (!import.meta.client) return '/';
+    const nuxtConfig = (window as typeof window & {
+        __NUXT__?: { config?: { app?: { baseURL?: string } } };
+    }).__NUXT__;
+    return normalizeBaseUrl(nuxtConfig?.config?.app?.baseURL || '/');
+}
+
+function withBase(path: string): string {
+    const normalizedPath = path.startsWith('/') ? path.slice(1) : path;
+    return `${getAppBaseUrl()}${normalizedPath}`;
+}
 
 async function cachedFetch(url: string | URL): Promise<Response> {
     const request = new Request(url);
@@ -130,15 +148,15 @@ class TypstLoader {
                 beforeBuild: [
                     preloadRemoteFonts([
                         // English fonts
-                        '/fonts/roboto-regular.ttf',
-                        '/fonts/roboto-bold.ttf',
-                        '/fonts/calibri-regular.ttf',
-                        '/fonts/calibri-bold.ttf',
-                        '/fonts/geist-bold.ttf',
-                        '/fonts/geist-regular.ttf',
+                        withBase('/fonts/roboto-regular.ttf'),
+                        withBase('/fonts/roboto-bold.ttf'),
+                        withBase('/fonts/calibri-regular.ttf'),
+                        withBase('/fonts/calibri-bold.ttf'),
+                        withBase('/fonts/geist-bold.ttf'),
+                        withBase('/fonts/geist-regular.ttf'),
                         // Arabic fonts
-                        '/fonts/ar/naskh.ttf',
-                        '/fonts/ar/naskh-bold.ttf',
+                        withBase('/fonts/ar/naskh.ttf'),
+                        withBase('/fonts/ar/naskh-bold.ttf'),
                     ], { assets: false }),
                 ],
             });

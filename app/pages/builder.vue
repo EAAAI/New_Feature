@@ -103,6 +103,13 @@ watch(
 onMounted(() => {
     settingsStore.initialize();
     resumeStore.initialize();
+
+    // Improve first-run UX: open builder with a ready resume instead of empty state.
+    if (resumeStore.resumeCount === 0) {
+        const language = settingsStore.settings.locale || 'en';
+        const id = resumeStore.createResume({ language });
+        resumeStore.setActiveResume(id);
+    }
 });
 
 const showMobilePreview = ref(false);
