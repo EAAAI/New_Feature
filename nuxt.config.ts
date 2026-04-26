@@ -2,6 +2,9 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
+const appBaseUrl = process.env.NUXT_APP_BASE_URL || '/';
+const siteUrl = process.env.NUXT_SITE_URL || 'https://newcv.com';
+
 export default defineNuxtConfig({
     modules: [
         'shadcn-nuxt',
@@ -22,6 +25,7 @@ export default defineNuxtConfig({
     devtools: { enabled: false },
 
     app: {
+        baseURL: appBaseUrl,
         head: {
             link: [
                 { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
@@ -40,7 +44,7 @@ export default defineNuxtConfig({
     css: ['~/assets/css/tailwind.css', '~/assets/css/app.css'],
 
     site: {
-        url: 'https://newcv.com',
+        url: siteUrl,
         name: 'NewCv',
         description: 'Build professional resumes for free. No servers, no registration, no payments. Unlimited downloads and resumes with complete privacy.',
         defaultLocale: 'en',
@@ -66,7 +70,7 @@ export default defineNuxtConfig({
     },
     compatibilityDate: '2025-07-15',
     nitro: {
-        preset: 'cloudflare-module',
+        preset: process.env.NITRO_PRESET || 'cloudflare-module',
     },
 
     vite: {
@@ -104,7 +108,7 @@ export default defineNuxtConfig({
         lazy: true,
         langDir: 'locales',
         strategy: 'prefix_except_default',
-        baseUrl: 'https://newcv.com',
+        baseUrl: siteUrl,
         detectBrowserLanguage: {
             useCookie: true,
             cookieKey: 'i18n_redirected',
@@ -125,7 +129,7 @@ export default defineNuxtConfig({
             theme_color: '#3b82f6',
             background_color: '#ffffff',
             display: 'standalone',
-            start_url: '/',
+            start_url: appBaseUrl,
             icons: [
                 {
                     src: '/icon.svg',
