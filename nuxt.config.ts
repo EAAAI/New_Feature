@@ -4,6 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 const appBaseUrl = process.env.NUXT_APP_BASE_URL || '/';
 const siteUrl = process.env.NUXT_SITE_URL || 'https://newcv.com';
+const isSubpathDeploy = appBaseUrl !== '/';
 
 export default defineNuxtConfig({
     modules: [
@@ -28,7 +29,7 @@ export default defineNuxtConfig({
         baseURL: appBaseUrl,
         head: {
             link: [
-                { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+                { rel: 'icon', type: 'image/svg+xml', href: `${appBaseUrl}favicon.svg` },
             ],
             meta: [
                 { charset: 'utf-8' },
@@ -132,7 +133,7 @@ export default defineNuxtConfig({
             start_url: appBaseUrl,
             icons: [
                 {
-                    src: '/icon.svg',
+                    src: `${appBaseUrl}icon.svg`,
                     sizes: 'any',
                     type: 'image/svg+xml',
                     purpose: 'any maskable',
@@ -140,7 +141,7 @@ export default defineNuxtConfig({
             ],
         },
         workbox: {
-            navigateFallback: '/',
+            navigateFallback: appBaseUrl,
             cleanupOutdatedCaches: true,
         },
         client: {
@@ -152,6 +153,7 @@ export default defineNuxtConfig({
     },
 
     robots: {
+        robotsTxt: !isSubpathDeploy,
         allow: '/',
         disallow: ['/api/', '/_nuxt/'],
     },

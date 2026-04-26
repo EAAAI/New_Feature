@@ -51,7 +51,7 @@ jobs:
             SITE_URL="https://${OWNER}.github.io/"
           else
             BASE_URL="/${REPO_NAME}/"
-            SITE_URL="https://${OWNER}.github.io/${REPO_NAME}/"
+            SITE_URL="https://${OWNER}.github.io/"
           fi
 
           echo "NUXT_APP_BASE_URL=${BASE_URL}" >> "$GITHUB_ENV"
