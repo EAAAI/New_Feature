@@ -189,7 +189,7 @@ export const useResumeStore = defineStore('resume', {
                     });
                 }
             });
-            if (!this.activeResumeId && Object.keys(this.resumes).length > 0) {
+            if ((!this.activeResumeId || !this.resumes[this.activeResumeId]) && Object.keys(this.resumes).length > 0) {
                 this.activeResumeId = Object.keys(this.resumes)[0];
             }
         },

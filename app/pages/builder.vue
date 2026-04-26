@@ -1,4 +1,8 @@
 <script lang="ts" setup>
+definePageMeta({
+    ssr: false,
+});
+
 import { useResumeStore } from '~/stores/resume';
 import { EyeIcon, FileText } from 'lucide-vue-next';
 import { Button } from '~/components/ui/button';
