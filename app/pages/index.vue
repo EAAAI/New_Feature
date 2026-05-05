@@ -1,8 +1,6 @@
 <script lang="ts" setup>
 import {
     ArrowRight,
-    Check,
-    X,
 } from 'lucide-vue-next';
 import {
     createOrganizationStructuredData,
@@ -27,21 +25,6 @@ const { data: stats } = await useFetch<PublicStats>('/api/stats', {
 });
 
 const formatNumber = (n: number) => n.toLocaleString('en-US');
-
-
-
-
-
-const comparisonRows = [
-    { key: 'pdfDownload', us: 'yes', canva: 'yes', zety: 'no', resumeio: 'no' },
-    { key: 'noAccount', us: 'yes', canva: 'no', zety: 'no', resumeio: 'no' },
-    { key: 'noWatermark', us: 'yes', canva: 'yes', zety: 'no', resumeio: 'no' },
-    { key: 'noAds', us: 'yes', canva: 'no', zety: 'no', resumeio: 'yes' },
-    { key: 'dataOnDevice', us: 'yes', canva: 'no', zety: 'no', resumeio: 'no' },
-    { key: 'worksOffline', us: 'yes', canva: 'no', zety: 'no', resumeio: 'no' },
-    { key: 'unlimitedDownloads', us: 'yes', canva: 'yes', zety: 'no', resumeio: 'no' },
-    { key: 'noTrial', us: 'yes', canva: 'no', zety: 'no', resumeio: 'no' },
-] as const;
 
 
 
@@ -137,12 +120,6 @@ useHead({
                 <div class="grid grid-cols-1 lg:grid-cols-[1.05fr_1fr] gap-16 items-center">
                     <!-- Left: copy -->
                     <div>
-                        <!-- Stats chip -->
-                        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-50 border border-green-200 text-xs font-medium text-green-700 mb-5">
-                            <span class="w-1.5 h-1.5 rounded-full bg-green shrink-0" />
-                            {{ formatNumber(stats.users) }} {{ $t('homepage.hero.stat1Label') }} · {{ formatNumber(stats.downloads) }} {{ $t('homepage.hero.stat2Label') }}
-                        </div>
-
                         <h1 class="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-tight text-ink">
                             {{ $t('homepage.hero.title') }}
                         </h1>
@@ -152,7 +129,7 @@ useHead({
 
                         <div class="flex flex-wrap gap-2.5 mt-7">
                             <NuxtLink :to="localePath('/builder')">
-                                <button class="inline-flex items-center gap-2 h-[46px] px-[22px] rounded-lg bg-green text-white font-medium text-[15px] hover:bg-green-600 transition-colors">
+                                <button class="inline-flex items-center gap-2 h-[46px] px-[22px] rounded-lg bg-primary text-white font-medium text-[15px] hover:bg-primary/90 transition-colors shadow-sm">
                                     {{ $t('homepage.hero.ctaBuild') }}
                                     <ArrowRight class="w-4 h-4" />
                                 </button>
@@ -167,7 +144,7 @@ useHead({
                             {{ $t('homepage.termsAgreement') }}
                             <NuxtLink
                                 :to="localePath('/terms')"
-                                class="text-green-700 underline underline-offset-2 hover:text-green-ink"
+                                class="text-primary underline underline-offset-2 hover:text-primary/90"
                             >
                                 {{ $t('homepage.termsLink') }}
                             </NuxtLink>
@@ -208,8 +185,8 @@ useHead({
                             :data="sampleResumeSrc"
                             type="image/svg+xml"
                             :aria-label="$t('homepage.sampleResume.alt')"
-                            class="w-[420px] aspect-[596/842] rounded-[10px] border border-rule bg-white pointer-events-none"
-                            style="box-shadow: 0 1px 2px rgb(11 18 32 / 0.04), 0 20px 40px -12px rgb(11 18 32 / 0.12);"
+                            class="w-[420px] aspect-[596/842] rounded-[14px] border border-rule bg-card pointer-events-none"
+                            style="box-shadow: 0 1px 2px rgb(15 23 42 / 0.04), 0 24px 48px -16px rgb(15 23 42 / 0.16);"
                         />
                     </div>
                 </div>
@@ -219,13 +196,13 @@ useHead({
 
 
         <!-- ─── How It Works ──────────────────────────────────────────────── -->
-        <section class="py-[88px] bg-bg-2 border-t border-b border-rule">
+        <section class="py-[88px] bg-bg-dark border-t border-b border-border/20">
             <div class="max-w-[1180px] mx-auto px-6">
                 <div class="text-center max-w-[640px] mx-auto mb-12">
-                    <div class="text-xs uppercase tracking-widest font-semibold text-green-700 mb-3">
+                    <div class="text-xs uppercase tracking-widest font-semibold text-white mb-3">
                         {{ $t('homepage.howItWorks.eyebrow') }}
                     </div>
-                    <h2 class="text-[clamp(28px,3.5vw,40px)] font-semibold tracking-tight leading-tight text-ink">
+                    <h2 class="text-[clamp(28px,3.5vw,40px)] font-semibold tracking-tight leading-tight text-white">
                         {{ $t('homepage.howItWorks.title') }}
                     </h2>
                 </div>
@@ -238,15 +215,15 @@ useHead({
                             { n: '3', title: t('homepage.howItWorks.step3.title'), body: t('homepage.howItWorks.step3.description') },
                         ]"
                         :key="step.n"
-                        class="bg-white border border-rule rounded-[10px] p-7"
+                        class="bg-bg-card-dark border border-border/20 rounded-[14px] p-7"
                     >
-                        <div class="w-8 h-8 rounded-full bg-ink text-white flex items-center justify-center text-sm font-semibold mb-[18px]">
+                        <div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center text-sm font-semibold mb-[18px]">
                             {{ step.n }}
                         </div>
-                        <h3 class="text-[17px] font-semibold tracking-tight text-ink">
+                        <h3 class="text-[17px] font-semibold tracking-tight text-white">
                             {{ step.title }}
                         </h3>
-                        <p class="text-sm text-ink-3 mt-2 leading-relaxed">
+                        <p class="text-sm text-white mt-2 leading-relaxed">
                             {{ step.body }}
                         </p>
                     </div>
@@ -254,127 +231,18 @@ useHead({
             </div>
         </section>
 
-        <!-- ─── Compare Table ─────────────────────────────────────────────── -->
-        <section class="py-[88px] bg-white">
-            <div class="max-w-[980px] mx-auto px-6">
-                <div class="text-center mb-10">
-                    <div class="text-xs uppercase tracking-widest font-semibold text-green-700 mb-3">
-                        {{ $t('homepage.comparison.eyebrow') }}
-                    </div>
-                    <h2 class="text-[clamp(28px,3.5vw,40px)] font-semibold tracking-tight leading-tight text-ink">
-                        {{ $t('homepage.comparison.title') }}
-                    </h2>
-                    <p class="text-[15px] text-ink-3 mt-2.5">
-                        {{ $t('homepage.comparison.caption') }}
-                    </p>
-                </div>
-
-                <div class="bg-white border border-rule rounded-[10px] overflow-hidden">
-                    <div class="overflow-x-auto">
-                        <table class="w-full border-collapse text-sm">
-                            <thead>
-                                <tr>
-                                    <th class="py-4 px-[18px] text-left text-[13px] font-semibold text-ink bg-bg-2 border-b border-rule">
-                                        {{ t('homepage.comparison.headers.feature') }}
-                                    </th>
-                                    <th class="py-4 px-[18px] text-center text-[13px] font-semibold text-green-700 bg-green-50 border-b border-rule">
-                                        {{ t('homepage.comparison.headers.us') }}
-                                    </th>
-                                    <th class="py-4 px-[18px] text-center text-[13px] font-semibold text-ink bg-bg-2 border-b border-rule">
-                                        {{ t('homepage.comparison.headers.canva') }}
-                                    </th>
-                                    <th class="py-4 px-[18px] text-center text-[13px] font-semibold text-ink bg-bg-2 border-b border-rule">
-                                        {{ t('homepage.comparison.headers.zety') }}
-                                    </th>
-                                    <th class="py-4 px-[18px] text-center text-[13px] font-semibold text-ink bg-bg-2 border-b border-rule">
-                                        {{ t('homepage.comparison.headers.resumeio') }}
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr
-                                    v-for="(row, ri) in comparisonRows"
-                                    :key="row.key"
-                                    :class="ri < comparisonRows.length - 1 ? 'border-b border-rule-soft' : ''"
-                                >
-                                    <td class="py-3.5 px-[18px] text-sm text-ink-2">
-                                        {{ $t(`homepage.comparison.rows.${row.key}`) }}
-                                    </td>
-                                    <td class="py-3.5 px-[18px] text-center bg-green-50/60">
-                                        <Check
-                                            v-if="row.us === 'yes'"
-                                            class="w-[17px] h-[17px] text-green-600 mx-auto"
-                                            :stroke-width="2.4"
-                                        />
-                                        <X
-                                            v-else
-                                            class="w-[17px] h-[17px] text-destructive mx-auto"
-                                            :stroke-width="2.2"
-                                        />
-                                    </td>
-                                    <td class="py-3.5 px-[18px] text-center">
-                                        <Check
-                                            v-if="row.canva === 'yes'"
-                                            class="w-[17px] h-[17px] text-green-600 mx-auto"
-                                            :stroke-width="2.4"
-                                        />
-                                        <X
-                                            v-else
-                                            class="w-[17px] h-[17px] text-destructive mx-auto"
-                                            :stroke-width="2.2"
-                                        />
-                                    </td>
-                                    <td class="py-3.5 px-[18px] text-center">
-                                        <Check
-                                            v-if="row.zety === 'yes'"
-                                            class="w-[17px] h-[17px] text-green-600 mx-auto"
-                                            :stroke-width="2.4"
-                                        />
-                                        <X
-                                            v-else
-                                            class="w-[17px] h-[17px] text-destructive mx-auto"
-                                            :stroke-width="2.2"
-                                        />
-                                    </td>
-                                    <td class="py-3.5 px-[18px] text-center">
-                                        <Check
-                                            v-if="row.resumeio === 'yes'"
-                                            class="w-[17px] h-[17px] text-green-600 mx-auto"
-                                            :stroke-width="2.4"
-                                        />
-                                        <X
-                                            v-else
-                                            class="w-[17px] h-[17px] text-destructive mx-auto"
-                                            :stroke-width="2.2"
-                                        />
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <p class="text-xs text-ink-4 mt-3 text-center">
-                    {{ t('homepage.comparison.footnote') }}
-                </p>
-            </div>
-        </section>
-
-
-
-
-
         <!-- ─── Final CTA ─────────────────────────────────────────────────── -->
-        <section class="py-[88px] bg-bg-2 border-t border-rule">
+        <section class="py-[88px] bg-bg-dark border-t border-border/20">
             <div class="max-w-[640px] mx-auto px-6 text-center">
-                <h2 class="text-[clamp(30px,4vw,44px)] font-semibold tracking-tight leading-tight text-ink">
+                <h2 class="text-[clamp(30px,4vw,44px)] font-semibold tracking-tight leading-tight text-white">
                     {{ t('homepage.finalCta.title') }}
                 </h2>
-                <p class="text-[17px] text-ink-3 mt-3.5">
+                <p class="text-[17px] text-white mt-3.5">
                     {{ $t('homepage.finalCta.sub') }}
                 </p>
                 <div class="flex flex-wrap gap-2.5 justify-center mt-6">
                     <NuxtLink :to="localePath('/builder')">
-                        <button class="inline-flex items-center gap-2 h-[46px] px-[22px] rounded-lg bg-green text-white font-medium text-[15px] hover:bg-green-600 transition-colors">
+                        <button class="inline-flex items-center gap-2 h-[46px] px-[22px] rounded-lg bg-primary text-white font-medium text-[15px] hover:bg-primary/90 transition-colors shadow-sm">
                             {{ $t('homepage.finalCta.ctaBuild') }}
                             <ArrowRight class="w-4 h-4" />
                         </button>

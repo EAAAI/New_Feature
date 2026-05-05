@@ -93,7 +93,7 @@
     "heroSubheadline": "No account. No watermark. No \"upgrade to download.\" Just a resume builder that does what it says.",
     "hero": {
       "badge": "10,247 users · 55,812 PDFs downloaded",
-      "title": "The free resume builder that stays free forever.",
+      "title": "Build your resume.",
       "sub": "Build, preview, and download an ATS-ready PDF in your browser. No account. No watermark. No upgrade to download.",
       "ctaBuild": "Build my resume",
       "ctaSample": "See a sample PDF",
@@ -183,37 +183,6 @@
         "title": "Download your PDF",
         "description": "Hit download. Get a properly typeset PDF with selectable text and embedded fonts. Done."
       }
-    },
-    "comparison": {
-      "title": "How we compare to the paid alternatives.",
-      "subtitle": "We checked so you don't have to.",
-      "eyebrow": "Comparison",
-      "caption": "Based on competitors' free tiers as of April 2026. Pricing may change.",
-      "headers": {
-        "feature": "Feature",
-        "us": "NewCv",
-        "canva": "Canva",
-        "zety": "Zety",
-        "resumeio": "Resume.io"
-      },
-      "rows": {
-        "pdfDownload": "Free PDF download",
-        "noAccount": "No account needed",
-        "noWatermark": "No watermark",
-        "noAds": "No ads while you build",
-        "dataOnDevice": "Data stays on your device",
-        "worksOffline": "Works offline",
-        "unlimitedDownloads": "Unlimited downloads",
-        "noTrial": "No trial that auto-charges"
-      },
-      "values": {
-        "free": "Free",
-        "paid": "Paid",
-        "yes": "Yes",
-        "no": "No",
-        "limited": "Limited"
-      },
-      "footnote": "Comparison based on free tiers as of April 2026. Competitors may change pricing."
     },
     "whyBuilt": {
       "title": "Why This Exists",

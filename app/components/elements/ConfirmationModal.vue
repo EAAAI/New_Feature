@@ -6,7 +6,7 @@
     >
         <div class="absolute inset-0 bg-black/50" />
         <div
-            class="relative bg-white border rounded-lg shadow-xl p-6 w-96 max-w-[90vw]"
+            class="relative bg-card border border-border rounded-lg shadow-xl p-6 w-96 max-w-[90vw]"
             @click.stop
         >
             <div class="space-y-4">
@@ -17,12 +17,12 @@
                         </div>
                     </div>
                     <div class="flex-1">
-                        <h3 class="text-lg font-semibold text-gray-900">
+                        <h3 class="text-lg font-semibold text-ink">
                             {{ title }}
                         </h3>
                     </div>
                 </div>
-                <div class="text-gray-600">
+                <div class="text-ink-3">
                     <p>{{ message }}</p>
                 </div>
                 <div class="flex gap-3 pt-4">

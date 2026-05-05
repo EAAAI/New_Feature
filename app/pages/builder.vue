@@ -176,7 +176,7 @@ const orderedSections = computed(() => {
 <template>
     <ClientOnly>
         <div
-            class="bg-gray-50 min-h-screen"
+            class="bg-background min-h-screen"
             :dir="resumeLanguageDir"
         >
             <!-- Empty State: No Resumes -->
@@ -186,14 +186,14 @@ const orderedSections = computed(() => {
             >
                 <div class="max-w-md w-full text-center space-y-6">
                     <div class="space-y-4">
-                        <div class="mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
-                            <FileText class="w-8 h-8 text-green-700" />
+                        <div class="mx-auto w-16 h-16 bg-accent rounded-full flex items-center justify-center">
+                            <FileText class="w-8 h-8 text-primary" />
                         </div>
                         <div>
-                            <h2 class="text-2xl font-semibold text-gray-900 mb-2">
+                            <h2 class="text-2xl font-semibold text-ink mb-2">
                                 {{ t('builder.noResumeSelected') }}
                             </h2>
-                            <p class="text-gray-600">
+                            <p class="text-ink-3">
                                 {{ t('builder.noResumeDescription') }}
                             </p>
                         </div>
@@ -230,7 +230,7 @@ const orderedSections = computed(() => {
                     </div>
                 </div>
                 <div
-                    class="hidden lg:block fixed top-16 right-0 w-1/2 h-[calc(100vh-64px)] border-l border-gray-200 bg-gray-50 overflow-y-auto z-10"
+                    class="hidden lg:block fixed top-16 right-0 w-1/2 h-[calc(100vh-64px)] border-l border-border bg-secondary overflow-y-auto z-10"
                 >
                     <div class="p-4 lg:p-8 pt-[calc(2rem+4rem)]">
                         <ClientOnly>
@@ -245,11 +245,11 @@ const orderedSections = computed(() => {
                     <ResumeLanguageSelector
                         v-if="resumeStore.activeResume"
                         :model-value="resumeStore.activeResume.language"
-                        button-class="bg-black text-white border-black hover:bg-gray-800 shadow-lg"
+                        button-class="bg-primary text-white border-primary hover:bg-primary/90 shadow-lg"
                         @update="(code) => resumeStore.setResumeLanguage(resumeStore.activeResume!.id, code)"
                     />
                     <Button
-                        class="h-8 w-8 p-0 bg-black text-white border-black hover:bg-gray-800 shadow-lg"
+                        class="h-8 w-8 p-0 bg-primary text-white border-primary hover:bg-primary/90 shadow-lg"
                         variant="outline"
                         size="sm"
                         @click="showMobilePreview = true"
@@ -263,9 +263,9 @@ const orderedSections = computed(() => {
                     class="lg:hidden fixed inset-0 z-50 overflow-y-auto bg-black bg-opacity-50"
                 >
                     <div class="flex items-center justify-center min-h-screen p-4">
-                        <div class="bg-white rounded-lg max-w-full w-full max-h-[90vh] flex flex-col">
-                            <div class="p-4 border-b border-gray-200 flex justify-between items-center">
-                                <h3 class="text-lg font-medium">
+                        <div class="bg-card rounded-lg max-w-full w-full max-h-[90vh] flex flex-col border border-border">
+                            <div class="p-4 border-b border-border flex justify-between items-center">
+                                <h3 class="text-lg font-medium text-ink">
                                     {{ t('builder.resumePreview') }}
                                 </h3>
                                 <div class="flex items-center gap-2">
@@ -283,7 +283,7 @@ const orderedSections = computed(() => {
                                         @zoom-out="zoomOut"
                                     />
                                     <button
-                                        class="text-gray-400 hover:text-gray-600 p-2"
+                                        class="text-ink-4 hover:text-ink p-2"
                                         @click="showMobilePreview = false"
                                     >
                                         <span class="sr-only">Close</span>

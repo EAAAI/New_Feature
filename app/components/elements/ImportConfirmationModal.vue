@@ -6,14 +6,14 @@
     >
         <div class="absolute inset-0 bg-black/50" />
         <div
-            class="relative bg-white rounded-lg shadow-xl p-6 w-full max-w-lg mx-4"
+            class="relative bg-card rounded-lg shadow-xl p-6 w-full max-w-lg mx-4 border border-border"
             @click.stop
         >
             <div class="mb-4">
                 <h3 class="text-lg font-semibold">
                     Import Resumes
                 </h3>
-                <p class="text-sm text-gray-600 mt-1">
+                <p class="text-sm text-ink-3 mt-1">
                     {{ resumesToImport.length }} resume{{ resumesToImport.length !== 1 ? 's' : '' }} found in file
                 </p>
             </div>
@@ -41,13 +41,13 @@
                     <label
                         class="flex items-center gap-2 p-2 rounded cursor-pointer"
                         :class="[
-                            resume.isDuplicate ? 'bg-amber-50 hover:bg-amber-100' : 'hover:bg-gray-50',
+                            resume.isDuplicate ? 'bg-amber-50 hover:bg-amber-100' : 'hover:bg-secondary',
                         ]"
                     >
                         <input
                             v-model="selectedIndexes"
                             :value="index"
-                            class="rounded border-gray-300 text-primary focus:ring-primary"
+                            class="rounded border-border text-primary focus:ring-primary"
                             type="checkbox"
                         >
                         <div class="flex-1 min-w-0">
@@ -62,14 +62,14 @@
                                     Duplicate
                                 </Badge>
                             </div>
-                            <div class="text-xs text-gray-500">
+                            <div class="text-xs text-ink-4">
                                 {{ resume.itemCount }} items
                             </div>
                         </div>
                     </label>
                 </div>
             </div>
-            <div class="text-sm text-gray-600 mb-4">
+            <div class="text-sm text-ink-3 mb-4">
                 {{ selectedIndexes.length }} resume{{ selectedIndexes.length !== 1 ? 's' : '' }} selected for import
             </div>
             <div class="flex justify-end gap-3">

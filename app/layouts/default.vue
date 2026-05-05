@@ -24,9 +24,9 @@ const isActive = (path: string) => route.path === localePath(path) || route.path
 </script>
 
 <template>
-    <div class="min-h-screen bg-white flex flex-col">
+    <div class="min-h-screen bg-background text-foreground flex flex-col">
         <!-- ─── Nav ────────────────────────────────────────────────────────── -->
-        <header class="sticky top-0 z-40 border-b border-rule bg-white/90 backdrop-blur">
+        <header class="sticky top-0 z-40 border-b border-rule bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/80">
             <div class="max-w-[1180px] mx-auto px-6">
                 <div class="flex items-center justify-between h-[60px]">
                     <!-- Left: wordmark + nav links -->
@@ -40,8 +40,8 @@ const isActive = (path: string) => route.path === localePath(path) || route.path
                                 v-for="link in navLinks"
                                 :key="link.path"
                                 :to="localePath(link.path)"
-                                class="px-2.5 py-1.5 rounded-md text-[13.5px] font-medium transition-colors bg-green-50 text-green-ink hover:bg-green-100"
-                                :class="isActive(link.path) ? 'ring-1 ring-green-200' : ''"
+                                class="px-2.5 py-1.5 rounded-md text-[13.5px] font-medium transition-colors bg-accent text-primary hover:bg-accent/80"
+                                :class="isActive(link.path) ? 'ring-1 ring-primary/25' : ''"
                             >
                                 {{ link.label }}
                             </NuxtLink>
@@ -60,7 +60,7 @@ const isActive = (path: string) => route.path === localePath(path) || route.path
                         <div class="w-px h-4 bg-rule mx-1" />
 
                         <NuxtLink :to="localePath('/builder')">
-                            <button class="inline-flex items-center gap-1.5 h-[34px] px-3.5 rounded-lg text-[13px] font-medium text-white bg-green hover:bg-green-600 transition-colors">
+                            <button class="inline-flex items-center gap-1.5 h-[34px] px-3.5 rounded-lg text-[13px] font-medium text-white bg-primary hover:bg-primary/90 transition-colors shadow-sm">
                                 {{ t('navigation.startBuilding') }}
                                 <ArrowRight class="w-3.5 h-3.5" />
                             </button>
@@ -88,7 +88,7 @@ const isActive = (path: string) => route.path === localePath(path) || route.path
             <!-- Mobile drawer -->
             <div
                 v-if="isMobileMenuOpen"
-                class="md:hidden border-t border-rule bg-white"
+                class="md:hidden border-t border-rule bg-background"
             >
                 <div class="max-w-[1180px] mx-auto px-6 py-4 space-y-1">
                     <!-- Nav links -->
@@ -96,8 +96,8 @@ const isActive = (path: string) => route.path === localePath(path) || route.path
                         v-for="link in navLinks"
                         :key="link.path"
                         :to="localePath(link.path)"
-                        class="flex items-center px-3 py-2.5 rounded-lg text-sm font-medium transition-colors bg-green-50 text-green-ink hover:bg-green-100"
-                        :class="isActive(link.path) ? 'ring-1 ring-green-200' : ''"
+                        class="flex items-center px-3 py-2.5 rounded-lg text-sm font-medium transition-colors bg-accent text-primary hover:bg-accent/80"
+                        :class="isActive(link.path) ? 'ring-1 ring-primary/25' : ''"
                         @click="closeMobileMenu"
                     >
                         {{ link.label }}
@@ -112,7 +112,7 @@ const isActive = (path: string) => route.path === localePath(path) || route.path
                             :to="localePath('/builder')"
                             @click="closeMobileMenu"
                         >
-                            <button class="w-full inline-flex items-center justify-center gap-1.5 h-10 rounded-lg text-sm font-medium text-white bg-green hover:bg-green-600 transition-colors">
+                            <button class="w-full inline-flex items-center justify-center gap-1.5 h-10 rounded-lg text-sm font-medium text-white bg-primary hover:bg-primary/90 transition-colors shadow-sm">
                                 {{ t('navigation.startBuilding') }}
                                 <ArrowRight class="w-4 h-4" />
                             </button>
@@ -129,7 +129,7 @@ const isActive = (path: string) => route.path === localePath(path) || route.path
         <!-- ─── Footer ────────────────────────────────────────────────────── -->
         <footer
             v-if="route.path !== localePath('/builder')"
-            class="border-t border-rule bg-white pt-14 pb-7"
+            class="border-t border-rule bg-card pt-14 pb-7"
         >
             <div class="max-w-[1180px] mx-auto px-6">
                 <!-- 4-column grid -->

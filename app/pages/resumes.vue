@@ -214,8 +214,8 @@ useHead({
                     class="flex items-center justify-center py-12"
                 >
                     <div class="flex flex-col items-center gap-3">
-                        <div class="animate-spin w-8 h-8 border-4 border-green border-t-transparent rounded-full" />
-                        <p class="text-gray-600">
+                        <div class="animate-spin w-8 h-8 border-4 border-primary border-t-transparent rounded-full" />
+                        <p class="text-ink-3">
                             {{ $t('resumes.status.loading') }}
                         </p>
                     </div>

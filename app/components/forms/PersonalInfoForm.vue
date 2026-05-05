@@ -112,13 +112,13 @@
                         <div class="flex-none">
                             <component
                                 :is="getPlatformIcon(link.platform)"
-                                class="w-5 h-5 text-gray-600"
+                                class="w-5 h-5 text-ink-3"
                             />
                         </div>
                         <div class="w-32 md:w-40">
                             <select
                                 :value="link.platform"
-                                class="w-full px-3 py-2 border rounded-md border-gray-300 focus:border-green focus:ring-green-50 focus:ring-[3px] text-sm"
+                                class="w-full px-3 py-2 border rounded-md border-border bg-background text-foreground focus:border-ring focus:ring-ring/15 focus:ring-[3px] text-sm"
                                 @change="(e) => resumeStore.updateSocialLink(linkIndex, 'platform', (e.target as HTMLSelectElement).value)"
                             >
                                 <option

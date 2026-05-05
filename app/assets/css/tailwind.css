@@ -8,25 +8,29 @@
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 
-    --color-ink: #0B1220;
-    --color-ink-2: #1F2937;
-    --color-ink-3: #4B5563;
-    --color-ink-4: #6B7280;
-    --color-ink-5: #9AA3AF;
+    --color-ink: #0F172A;
+    --color-ink-2: #334155;
+    --color-ink-3: #64748B;
+    --color-ink-4: #94A3B8;
+    --color-ink-5: #94A3B8;
 
-    --color-bg-2: #F7F8FA;
-    --color-bg-3: #EEF0F4;
+    --color-bg-2: #F8FAFC;
+    --color-bg-3: #F8FAFC;
+    --color-bg-dark: #0F172A;
+    --color-bg-card-dark: #1E293B;
 
-    --color-rule: #E5E7EB;
-    --color-rule-soft: #EEF0F4;
+    --color-rule: #E2E8F0;
+    --color-rule-soft: #E2E8F0;
 
-    --color-green: #16A34A;
-    --color-green-50: #F0FDF4;
-    --color-green-100: #DCFCE7;
-    --color-green-200: #BBF7D0;
-    --color-green-600: #15803D;
-    --color-green-700: #166534;
-    --color-green-ink: #14532D;
+    --color-green: #3B82F6;
+    --color-green-50: #EFF6FF;
+    --color-green-100: #DBEAFE;
+    --color-green-200: #BFDBFE;
+    --color-green-600: #2563EB;
+    --color-green-700: #1D4ED8;
+    --color-green-ink: #1E40AF;
+
+    --color-link: #3B82F6;
 }
 
 @theme inline {
@@ -103,74 +107,84 @@
 }
 
 :root {
-    --background: #FFFFFF;
-    --foreground: #0B1220;
-    --card: #FFFFFF;
-    --card-foreground: #0B1220;
-    --popover: #FFFFFF;
-    --popover-foreground: #0B1220;
-    --primary: #0B1220;
+    --bg-hero: #FFFFFF;
+    --bg-alt: #F8FAFC;
+    --bg-dark: #0F172A;
+    --bg-card-dark: #1E293B;
+    --text-primary: #0F172A;
+    --text-secondary: #334155;
+    --text-muted: #64748B;
+    --text-faint: #94A3B8;
+    --border: #E2E8F0;
+    --color-link: #3B82F6;
+
+    --background: var(--bg-hero);
+    --foreground: var(--text-primary);
+    --card: var(--bg-hero);
+    --card-foreground: var(--text-primary);
+    --popover: var(--bg-hero);
+    --popover-foreground: var(--text-primary);
+    --primary: var(--color-link);
     --primary-foreground: #FFFFFF;
-    --secondary: #F7F8FA;
-    --secondary-foreground: #0B1220;
-    --muted: #F7F8FA;
-    --muted-foreground: #6B7280;
-    --accent: #F0FDF4;
-    --accent-foreground: #166534;
+    --secondary: var(--bg-alt);
+    --secondary-foreground: var(--text-primary);
+    --muted: var(--bg-alt);
+    --muted-foreground: var(--text-muted);
+    --accent: #DBEAFE;
+    --accent-foreground: #1D4ED8;
     --destructive: #DC2626;
     --destructive-foreground: #FFFFFF;
-    --border: #E5E7EB;
-    --input: #E5E7EB;
-    --ring: #16A34A;
-    --chart-1: #16A34A;
-    --chart-2: #15803D;
-    --chart-3: #166534;
-    --chart-4: #0B1220;
-    --chart-5: #6B7280;
+    --input: var(--border);
+    --ring: var(--color-link);
+    --chart-1: var(--color-link);
+    --chart-2: var(--text-primary);
+    --chart-3: var(--text-secondary);
+    --chart-4: var(--text-muted);
+    --chart-5: var(--text-faint);
     --radius: 0.625rem;
-    --sidebar: #F7F8FA;
-    --sidebar-foreground: #0B1220;
-    --sidebar-primary: #16A34A;
+    --sidebar: var(--bg-alt);
+    --sidebar-foreground: var(--text-primary);
+    --sidebar-primary: var(--text-primary);
     --sidebar-primary-foreground: #FFFFFF;
-    --sidebar-accent: #F0FDF4;
-    --sidebar-accent-foreground: #166534;
-    --sidebar-border: #E5E7EB;
-    --sidebar-ring: #16A34A;
+    --sidebar-accent: var(--bg-alt);
+    --sidebar-accent-foreground: var(--text-primary);
+    --sidebar-border: var(--border);
+    --sidebar-ring: var(--color-link);
 }
 
 .dark {
-    --background: oklch(0.145 0 0);
-    --foreground: oklch(0.985 0 0);
-    --card: oklch(0.145 0 0);
-    --card-foreground: oklch(0.985 0 0);
-    --popover: oklch(0.145 0 0);
-    --popover-foreground: oklch(0.985 0 0);
-    --primary: oklch(0.985 0 0);
-    --primary-foreground: oklch(0.205 0 0);
-    --secondary: oklch(0.269 0 0);
-    --secondary-foreground: oklch(0.985 0 0);
-    --muted: oklch(0.269 0 0);
-    --muted-foreground: oklch(0.708 0 0);
-    --accent: oklch(0.269 0 0);
-    --accent-foreground: oklch(0.985 0 0);
-    --destructive: oklch(0.396 0.141 25.723);
-    --destructive-foreground: oklch(0.637 0.237 25.331);
-    --border: oklch(0.269 0 0);
-    --input: oklch(0.269 0 0);
-    --ring: oklch(0.439 0 0);
-    --chart-1: oklch(0.488 0.243 264.376);
-    --chart-2: oklch(0.696 0.17 162.48);
-    --chart-3: oklch(0.769 0.188 70.08);
-    --chart-4: oklch(0.627 0.265 303.9);
-    --chart-5: oklch(0.645 0.246 16.439);
-    --sidebar: oklch(0.205 0 0);
-    --sidebar-foreground: oklch(0.985 0 0);
-    --sidebar-primary: oklch(0.488 0.243 264.376);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.269 0 0);
-    --sidebar-accent-foreground: oklch(0.985 0 0);
-    --sidebar-border: oklch(0.269 0 0);
-    --sidebar-ring: oklch(0.439 0 0);
+    --background: var(--bg-dark);
+    --foreground: #FFFFFF;
+    --card: var(--bg-card-dark);
+    --card-foreground: #FFFFFF;
+    --popover: var(--bg-card-dark);
+    --popover-foreground: #FFFFFF;
+    --primary: var(--color-link);
+    --primary-foreground: #FFFFFF;
+    --secondary: var(--bg-card-dark);
+    --secondary-foreground: #FFFFFF;
+    --muted: var(--bg-card-dark);
+    --muted-foreground: var(--text-faint);
+    --accent: var(--color-link);
+    --accent-foreground: #FFFFFF;
+    --destructive: #DC2626;
+    --destructive-foreground: #FFFFFF;
+    --border: #1F2937;
+    --input: #1F2937;
+    --ring: var(--color-link);
+    --chart-1: var(--color-link);
+    --chart-2: #FFFFFF;
+    --chart-3: #CBD5E1;
+    --chart-4: #94A3B8;
+    --chart-5: #64748B;
+    --sidebar: var(--bg-dark);
+    --sidebar-foreground: #FFFFFF;
+    --sidebar-primary: #FFFFFF;
+    --sidebar-primary-foreground: var(--bg-dark);
+    --sidebar-accent: var(--bg-card-dark);
+    --sidebar-accent-foreground: #FFFFFF;
+    --sidebar-border: #1F2937;
+    --sidebar-ring: var(--color-link);
 }
 
 @layer base {
@@ -181,6 +195,11 @@
     html, body {
         @apply bg-background text-foreground font-sans antialiased;
         font-feature-settings: 'cv11', 'ss01';
+    }
+
+    ::selection {
+        background: rgba(59, 130, 246, 0.18);
+        color: #0F172A;
     }
 
     h1, h2, h3, h4 {

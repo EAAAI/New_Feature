@@ -13,10 +13,10 @@
                 v-if="templateConfig.canMoveSection('projects')"
                 class="flex items-center gap-2"
             >
-                <span class="text-sm text-gray-600">{{ t('forms.projects.column') }}:</span>
+                <span class="text-sm text-ink-3">{{ t('forms.projects.column') }}:</span>
                 <select
                     :value="resumeStore.resumeData.sectionPlacement.projects"
-                    class="px-2 py-1 text-sm border rounded focus:ring-[3px] focus:ring-green-50 focus:border-green"
+                    class="px-2 py-1 text-sm border rounded border-border bg-background text-foreground focus:ring-[3px] focus:ring-ring/15 focus:border-ring"
                     @change="(e) => resumeStore.updateSectionPlacement('projects', (e.target as HTMLSelectElement).value as 'left' | 'right')"
                 >
                     <option value="left">
@@ -106,7 +106,7 @@
                     </div>
                     <div
                         v-if="!project.links?.length"
-                        class="text-xs text-gray-500"
+                        class="text-xs text-ink-4"
                     >
                         {{ t('forms.projects.emptyLinks') }}
                     </div>

@@ -19,7 +19,7 @@ withDefaults(defineProps<Props>(), {
             :size="iconSize"
         />
         <span class="text-[15px] font-bold tracking-tight text-ink">
-            New<span class="text-green-700">Cv</span>
+            New<span class="text-primary">Cv</span>
         </span>
     </div>
 </template>

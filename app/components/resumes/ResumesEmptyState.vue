@@ -1,11 +1,11 @@
 <template>
     <div class="text-center py-16">
         <div v-if="type === 'no-resumes'">
-            <FileText class="w-24 h-24 text-gray-300 mx-auto mb-4" />
-            <h2 class="text-2xl font-semibold text-gray-900 mb-2">
+            <FileText class="w-24 h-24 text-ink-5 mx-auto mb-4" />
+            <h2 class="text-2xl font-semibold text-ink mb-2">
                 {{ $t('resumes.empty.noResumes') }}
             </h2>
-            <p class="text-gray-600 mb-6">
+            <p class="text-ink-3 mb-6">
                 {{ $t('resumes.empty.createFirst') }}
             </p>
             <Button
@@ -16,11 +16,11 @@
             </Button>
         </div>
         <div v-else-if="type === 'no-search-results'">
-            <Search class="w-24 h-24 text-gray-300 mx-auto mb-4" />
-            <h2 class="text-2xl font-semibold text-gray-900 mb-2">
+            <Search class="w-24 h-24 text-ink-5 mx-auto mb-4" />
+            <h2 class="text-2xl font-semibold text-ink mb-2">
                 {{ $t('resumes.empty.noResults') }}
             </h2>
-            <p class="text-gray-600 mb-6">
+            <p class="text-ink-3 mb-6">
                 {{ $t('resumes.empty.noResultsMessage') }} "{{ searchQuery }}"
             </p>
             <div class="flex gap-3 justify-center">

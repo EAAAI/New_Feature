@@ -62,7 +62,7 @@
                     >
                         <div
                             v-if="dropZoneIndex === index && draggedIndex !== null && draggedIndex !== index"
-                            class="absolute top-0 left-0 right-0 h-px bg-gray-400 rounded-full z-10 transition-all duration-200"
+                            class="absolute top-0 left-0 right-0 h-px bg-border rounded-full z-10 transition-all duration-200"
                         />
                         <div
                             :class="[
@@ -81,7 +81,7 @@
                             @drop="onDrop($event, index)"
                         >
                             <div class="flex-shrink-0">
-                                <GripVertical class="w-4 h-4 text-gray-400" />
+                                <GripVertical class="w-4 h-4 text-ink-4" />
                             </div>
                             <div class="flex-shrink-0">
                                 <div
@@ -106,7 +106,7 @@
                         </div>
                         <div
                             v-if="dropZoneIndex === index + 1 && draggedIndex !== null"
-                            class="absolute bottom-0 left-0 right-0 h-px bg-gray-400 rounded-full z-10 transition-all duration-200"
+                            class="absolute bottom-0 left-0 right-0 h-px bg-border rounded-full z-10 transition-all duration-200"
                         />
                     </div>
                     <div
@@ -116,7 +116,7 @@
                     >
                         <div
                             v-if="dropZoneIndex === orderableSections.length && draggedIndex !== null"
-                            class="absolute top-2 left-0 right-0 h-px bg-gray-400 rounded-full z-10 transition-all duration-200"
+                            class="absolute top-2 left-0 right-0 h-px bg-border rounded-full z-10 transition-all duration-200"
                         />
                     </div>
                 </div>

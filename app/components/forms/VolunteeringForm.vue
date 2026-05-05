@@ -13,10 +13,10 @@
                 v-if="templateConfig.canMoveSection('volunteering')"
                 class="flex items-center gap-2"
             >
-                <span class="text-sm text-gray-600">{{ t('forms.volunteering.column') }}:</span>
+                <span class="text-sm text-ink-3">{{ t('forms.volunteering.column') }}:</span>
                 <select
                     :value="resumeStore.resumeData.sectionPlacement.volunteering"
-                    class="px-2 py-1 text-sm border rounded focus:ring-[3px] focus:ring-green-50 focus:border-green"
+                    class="px-2 py-1 text-sm border rounded border-border bg-background text-foreground focus:ring-[3px] focus:ring-ring/15 focus:border-ring"
                     @change="(e) => resumeStore.updateSectionPlacement('volunteering', (e.target as HTMLSelectElement).value as 'left' | 'right')"
                 >
                     <option value="left">

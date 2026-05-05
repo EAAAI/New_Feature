@@ -37,7 +37,7 @@ export default defineNuxtConfig({
                 { name: 'format-detection', content: 'telephone=no' },
                 { name: 'robots', content: 'index, follow' },
                 { name: 'author', content: 'NewCv' },
-                { name: 'theme-color', content: '#3b82f6' },
+                { name: 'theme-color', content: '#0f172a' },
             ],
         },
     },

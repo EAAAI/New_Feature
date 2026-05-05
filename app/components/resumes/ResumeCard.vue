@@ -1,6 +1,6 @@
 <template>
     <Card
-        :class="{ 'ring-2 ring-green': isActive }"
+        :class="{ 'ring-2 ring-primary': isActive }"
         class="hover:shadow-lg transition-shadow relative"
     >
         <CardHeader class="pb-4">
@@ -16,7 +16,7 @@
                     @keyup.escape="cancelEdit"
                 >
                 <button
-                    class="p-1 text-green-600 hover:text-green-700"
+                    class="p-1 text-primary hover:text-primary/90"
                     @click="saveEdit"
                 >
                     <Check class="w-4 h-4" />
@@ -36,14 +36,14 @@
                     {{ resume.name }}
                 </CardTitle>
                 <button
-                    class="p-1 text-gray-400 hover:text-gray-600 transition-colors"
+                    class="p-1 text-ink-4 hover:text-ink-3 transition-colors"
                     :title="$t('resumes.card.editNameTitle')"
                     @click="startEdit"
                 >
                     <PencilIcon class="w-4 h-4" />
                 </button>
             </div>
-            <div class="flex items-center justify-between gap-2 text-sm text-gray-500 flex-wrap">
+            <div class="flex items-center justify-between gap-2 text-sm text-ink-4 flex-wrap">
                 <div class="flex items-center gap-2">
                     <Calendar class="w-4 h-4" />
                     <span>{{ $t('resumes.status.updated') }} {{ formatDate(resume.updatedAt) }}</span>
@@ -58,7 +58,7 @@
                     />
                     <Badge
                         v-if="isActive"
-                        class="bg-green text-white text-xs"
+                        class="bg-primary text-white text-xs"
                     >
                         {{ $t('resumes.status.active') }}
                     </Badge>
@@ -67,13 +67,13 @@
         </CardHeader>
         <CardContent class="pt-0">
             <div class="space-y-2 mb-4">
-                <p class="font-medium text-gray-900">
+                <p class="font-medium text-ink">
                     {{ resumePreview.fullName }}
                 </p>
-                <p class="text-sm text-gray-600">
+                <p class="text-sm text-ink-3">
                     {{ resumePreview.position }}
                 </p>
-                <p class="text-xs text-gray-500">
+                <p class="text-xs text-ink-4">
                     {{ resumePreview.sections }}
                 </p>
             </div>

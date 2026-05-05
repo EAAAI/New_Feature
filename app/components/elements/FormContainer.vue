@@ -11,7 +11,7 @@
                     />
                     <h3
                         v-else
-                        class="text-lg font-semibold text-gray-900"
+                        class="text-lg font-semibold text-ink"
                     >
                         {{ props.title }}
                     </h3>

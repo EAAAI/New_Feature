@@ -1,5 +1,5 @@
 <template>
-    <div class="flex items-center bg-gray-100 rounded-lg p-1">
+    <div class="flex items-center bg-secondary rounded-lg p-1">
         <Button
             :disabled="zoomLevel <= minZoom"
             class="h-8 w-8 p-0"
@@ -10,7 +10,7 @@
             <ZoomOut class="h-4 w-4" />
             <span class="sr-only">Zoom out</span>
         </Button>
-        <span class="px-3 text-sm font-medium text-gray-700 min-w-[60px] text-center">
+        <span class="px-3 text-sm font-medium text-ink-2 min-w-[60px] text-center">
             {{ Math.round(zoomLevel * 100) }}%
         </span>
         <Button

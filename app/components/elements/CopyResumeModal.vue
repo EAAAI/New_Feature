@@ -45,11 +45,11 @@ const handleEnter = (event: KeyboardEvent) => {
     >
         <div class="absolute inset-0 bg-black/50" />
         <div
-            class="relative bg-white border rounded-lg shadow-xl p-6 w-96 max-w-[90vw]"
+            class="relative bg-card border border-border rounded-lg shadow-xl p-6 w-96 max-w-[90vw]"
             @click.stop
         >
             <div class="space-y-4">
-                <h3 class="text-lg font-semibold text-gray-900">
+                <h3 class="text-lg font-semibold text-ink">
                     {{ $t('resumes.modals.copy.title') }}
                 </h3>
                 <div class="space-y-2">

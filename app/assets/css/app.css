@@ -2,7 +2,7 @@
 .dp__input {
     width: 100% !important;
     padding: 4px 12px !important;
-    border: 1px solid #d1d5db !important;
+    border: 1px solid #e2e8f0 !important;
     border-radius: 6px !important;
     font-size: 14px !important;
     height: 36px !important;
@@ -16,32 +16,32 @@
 }
 
 .dp__input::placeholder {
-    color: #9ca3af !important;
+    color: #94a3b8 !important;
 }
 
 .dp__menu {
-    border: 1px solid #d1d5db !important;
+    border: 1px solid #e2e8f0 !important;
     border-radius: 6px !important;
 }
 
 .dp__theme_light {
     --dp-background-color: #ffffff;
-    --dp-text-color: #374151;
-    --dp-hover-color: #f3f4f6;
-    --dp-hover-text-color: #374151;
-    --dp-hover-icon-color: #9ca3af;
+    --dp-text-color: #334155;
+    --dp-hover-color: #f8fafc;
+    --dp-hover-text-color: #334155;
+    --dp-hover-icon-color: #94a3b8;
     --dp-primary-color: #3b82f6;
     --dp-primary-text-color: #ffffff;
-    --dp-secondary-color: #f3f4f6;
-    --dp-border-color: #d1d5db;
-    --dp-menu-border-color: #d1d5db;
-    --dp-border-color-hover: #9ca3af;
-    --dp-disabled-color: #f9fafb;
-    --dp-scroll-bar-background: #f3f4f6;
-    --dp-scroll-bar-color: #9ca3af;
+    --dp-secondary-color: #f8fafc;
+    --dp-border-color: #e2e8f0;
+    --dp-menu-border-color: #e2e8f0;
+    --dp-border-color-hover: #94a3b8;
+    --dp-disabled-color: #f8fafc;
+    --dp-scroll-bar-background: #f1f5f9;
+    --dp-scroll-bar-color: #94a3b8;
     --dp-success-color: #10b981;
     --dp-success-color-disabled: #a7f3d0;
-    --dp-icon-color: #9ca3af;
+    --dp-icon-color: #94a3b8;
     --dp-danger-color: #ef4444;
     --dp-highlight-color: rgba(59, 130, 246, 0.1);
 }

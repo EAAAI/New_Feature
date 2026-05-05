@@ -63,8 +63,8 @@
                         {{ t('builder.settings') }}
                     </Button>
                     <div class="flex items-center rounded-md overflow-hidden">
-                        <Button
-                            class="rounded-none h-9 bg-green hover:bg-green-600 text-white border-green hover:border-green-600"
+                                    <Button
+                                        class="rounded-none h-9 bg-primary hover:bg-primary/90 text-white border-primary hover:border-primary/90 shadow-sm"
                             size="sm"
                             @click="handleDownload"
                         >
@@ -75,7 +75,7 @@
                             <MenubarMenu>
                                 <MenubarTrigger as-child>
                                     <Button
-                                        class="rounded-none px-2 h-9 bg-green hover:bg-green-600 text-white border-green hover:border-green-600"
+                                        class="rounded-none px-2 h-9 bg-primary hover:bg-primary/90 text-white border-primary hover:border-primary/90 shadow-sm"
                                         size="sm"
                                         variant="default"
                                     >
@@ -110,8 +110,8 @@
                         <Settings class="w-4 h-4" />
                     </Button>
                     <div class="flex items-center rounded-md overflow-hidden">
-                        <Button
-                            class="rounded-none h-9 bg-green hover:bg-green-600 text-white border-green hover:border-green-600"
+                                    <Button
+                                        class="rounded-none h-9 bg-primary hover:bg-primary/90 text-white border-primary hover:border-primary/90 shadow-sm"
                             size="sm"
                             @click="handleDownload"
                         >
@@ -122,7 +122,7 @@
                             <MenubarMenu>
                                 <MenubarTrigger as-child>
                                     <Button
-                                        class="rounded-none px-2 h-9 bg-green hover:bg-green-600 text-white border-green hover:border-green-600"
+                                        class="rounded-none px-2 h-9 bg-primary hover:bg-primary/90 text-white border-primary hover:border-primary/90 shadow-sm"
                                         size="sm"
                                         variant="default"
                                     >
@@ -150,20 +150,18 @@
             </div>
             <Card class="h-full">
                 <CardContent class="p-0">
-                    <div class="bg-gray-100 rounded-lg overflow-hidden h-full">
-                        <div class="bg-white h-full min-h-[calc(100vh-200px)] flex flex-col">
+                    <div class="bg-secondary rounded-lg overflow-hidden h-full border border-border">
+                        <div class="bg-card h-full min-h-[calc(100vh-200px)] flex flex-col">
                             <div
                                 v-if="isLoading"
                                 class="flex items-center justify-center flex-1"
                             >
                                 <div class="text-center">
-                                    <div
-                                        class="w-16 h-16 border-4 border-gray-300 border-t-green rounded-full animate-spin mx-auto mb-4"
-                                    />
-                                    <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                                    <div class="w-16 h-16 border-4 border-slate-200 border-t-primary rounded-full animate-spin mx-auto mb-4" />
+                                    <h3 class="text-xl font-semibold text-ink mb-2">
                                         {{ t('builder.loadingPreview') }}
                                     </h3>
-                                    <p class="text-gray-600">
+                                    <p class="text-ink-3">
                                         {{ t('builder.loadingPreviewDescription') }}
                                     </p>
                                 </div>
@@ -173,9 +171,7 @@
                                 class="flex items-center justify-center flex-1"
                             >
                                 <div class="text-center">
-                                    <div
-                                        class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4"
-                                    >
+                                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
                                         <svg
                                             class="w-8 h-8 text-red-500"
                                             fill="none"
@@ -223,11 +219,9 @@
                                 class="flex items-center justify-center flex-1"
                             >
                                 <div class="text-center">
-                                    <div
-                                        class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4"
-                                    >
+                                    <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
                                         <svg
-                                            class="w-8 h-8 text-green-700"
+                                            class="w-8 h-8 text-primary"
                                             fill="none"
                                             stroke="currentColor"
                                             viewBox="0 0 24 24"
@@ -240,10 +234,10 @@
                                             />
                                         </svg>
                                     </div>
-                                    <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                                    <h3 class="text-xl font-semibold text-ink mb-2">
                                         {{ t('builder.initializingTypst') }}
                                     </h3>
-                                    <p class="text-gray-600">
+                                    <p class="text-ink-3">
                                         {{ t('builder.settingUpCompiler') }}
                                     </p>
                                 </div>

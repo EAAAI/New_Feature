@@ -13,10 +13,10 @@
                 v-if="templateConfig.canMoveSection('languages')"
                 class="flex items-center gap-2"
             >
-                <span class="text-sm text-gray-600">{{ t('forms.languages.column') }}:</span>
+                <span class="text-sm text-ink-3">{{ t('forms.languages.column') }}:</span>
                 <select
                     :value="resumeStore.resumeData.sectionPlacement.languages"
-                    class="px-2 py-1 text-sm border rounded focus:ring-[3px] focus:ring-green-50 focus:border-green"
+                    class="px-2 py-1 text-sm border rounded border-border bg-background text-foreground focus:ring-[3px] focus:ring-ring/15 focus:border-ring"
                     @change="(e) => resumeStore.updateSectionPlacement('languages', (e.target as HTMLSelectElement).value as 'left' | 'right')"
                 >
                     <option value="left">
@@ -55,7 +55,7 @@
                     <select
                         :id="`language-proficiency-${index}`"
                         :value="language.proficiency"
-                        class="w-full px-3 py-2 border rounded-md border-gray-300 shadow-sm focus:border-green focus:ring-green-50 focus:ring-[3px]"
+                        class="w-full px-3 py-2 border rounded-md border-border bg-background text-foreground shadow-sm focus:border-ring focus:ring-ring/15 focus:ring-[3px]"
                         @change="(e) => resumeStore.updateLanguage(index, 'proficiency', (e.target as HTMLSelectElement).value)"
                     >
                         <option value="">

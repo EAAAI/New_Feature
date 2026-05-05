@@ -6,22 +6,22 @@
     >
         <div class="absolute inset-0 bg-black/50" />
         <div
-            class="relative bg-white rounded-lg shadow-xl p-6 w-full max-w-md mx-4"
+            class="relative bg-card rounded-lg shadow-xl p-6 w-full max-w-md mx-4 border border-border"
             @click.stop
         >
             <div class="mb-4">
                 <h3 class="text-lg font-semibold">
                     {{ $t('resumes.modals.export.title') }}
                 </h3>
-                <p class="text-sm text-gray-600 mt-1">
+                <p class="text-sm text-ink-3 mt-1">
                     {{ $t('resumes.modals.export.description') }}
                 </p>
             </div>
-            <div class="bg-green-50 border border-green-200 rounded-md p-3 mb-4">
+            <div class="bg-accent border border-border rounded-md p-3 mb-4">
                 <div class="flex">
-                    <Info class="h-5 w-5 text-green-700 flex-shrink-0" />
+                    <Info class="h-5 w-5 text-primary flex-shrink-0" />
                     <div class="ml-3">
-                        <p class="text-sm text-green-700">
+                        <p class="text-sm text-primary">
                             {{ $t('resumes.modals.export.infoMessage') }}
                         </p>
                     </div>
@@ -31,7 +31,7 @@
                 <label class="flex items-center gap-2 cursor-pointer">
                     <input
                         v-model="selectAll"
-                        class="rounded border-gray-300 text-primary focus:ring-primary"
+                        class="rounded border-border text-primary focus:ring-primary"
                         type="checkbox"
                         @change="handleSelectAll"
                     >
@@ -42,25 +42,25 @@
                 <label
                     v-for="resume in resumes"
                     :key="resume.id"
-                    class="flex items-center gap-2 cursor-pointer hover:bg-gray-50 p-2 rounded"
+                    class="flex items-center gap-2 cursor-pointer hover:bg-secondary p-2 rounded"
                 >
                     <input
                         v-model="selectedResumes"
                         :value="resume.id"
-                        class="rounded border-gray-300 text-primary focus:ring-primary"
+                        class="rounded border-border text-primary focus:ring-primary"
                         type="checkbox"
                     >
                     <div class="flex-1 min-w-0">
                         <div class="text-sm font-medium truncate">
                             {{ resume.name }}
                         </div>
-                        <div class="text-xs text-gray-500">
+                        <div class="text-xs text-ink-4">
                             Updated {{ formatDate(resume.updatedAt) }}
                         </div>
                     </div>
                 </label>
             </div>
-            <div class="text-sm text-gray-600 mb-4">
+            <div class="text-sm text-ink-3 mb-4">
                 {{ t('resumes.modals.export.selectedCount', {
                     count: selectedResumes.length,
                     countPlural: selectedResumes.length !== 1 ? t('resumes.resumeCount.resumes') : t('resumes.resumeCount.resume'),

@@ -2,7 +2,7 @@
     <div class="mb-8">
         <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 sm:gap-0">
             <div class="flex items-center space-x-3">
-                <h1 class="text-2xl font-bold text-gray-900">
+                <h1 class="text-2xl font-bold text-ink">
                     {{ resumeStore.activeResume?.name || t('builder.defaultTitle') }}
                 </h1>
                 <ResumeLanguageSelector

@@ -2,11 +2,11 @@
     <div class="flex flex-col lg:flex-row lg:items-center justify-between mb-8 gap-4">
         <div class="flex items-center justify-between">
             <div>
-                <h1 class="text-2xl sm:text-3xl font-bold text-gray-900">
+                <h1 class="text-2xl sm:text-3xl font-bold text-ink">
                     {{ $t('resumes.title') }}
                 </h1>
                 <ClientOnly>
-                    <p class="text-gray-600 mt-1 sm:mt-2 text-sm sm:text-base">
+                    <p class="text-ink-3 mt-1 sm:mt-2 text-sm sm:text-base">
                         <span v-if="searchQuery && filteredCount !== resumeCount">
                             {{ filteredCount }} {{ $t('resumes.resumeCount.of') }} {{ resumeCount }} {{ resumeCount !== 1 ? $t('resumes.resumeCount.resumes') : $t('resumes.resumeCount.resume') }}
                         </span>
@@ -27,7 +27,7 @@
         </div>
         <div class="flex flex-col sm:flex-row gap-3 sm:items-center">
             <div class="relative">
-                <Search class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                <Search class="absolute left-3 top-1/2 transform -translate-y-1/2 text-ink-4 w-4 h-4" />
                 <Input
                     :model-value="searchQuery"
                     class="pl-10 w-full sm:w-64"
