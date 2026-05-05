@@ -12,7 +12,7 @@ command = "npm run build"
 [[d1_databases]]
 binding = "DB"
 database_name = "resume-builder-db"
-database_id = "18a06c90-6adb-4400-bbf5-85313c47df0a"
+database_id = "75b98eba-b75c-4e04-b5bd-6e8cbafaa5cf"
 
 [[send_email]]
 name = "SEND_EMAIL"
