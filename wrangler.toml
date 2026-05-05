@@ -1,4 +1,4 @@
-name = "resume-builder"
+name = "cvbuilder"
 main = ".output/server/index.mjs"
 compatibility_date = "2025-07-15"
 
