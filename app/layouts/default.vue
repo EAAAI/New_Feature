@@ -172,6 +172,9 @@ const isActive = (path: string) => route.path === localePath(path) || route.path
                     </div>
                     <div>{{ t('footer.noTracking') }}</div>
                 </div>
+                <p class="mt-3 text-[12.5px] text-ink-4 text-center sm:text-left">
+                    {{ t('footer.attribution') }}
+                </p>
             </div>
         </footer>
 

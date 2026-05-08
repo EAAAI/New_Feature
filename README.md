@@ -2,6 +2,10 @@
 
 Source code for **[newcv.com](https://newcv.com)** — a free resume builder. No accounts, no watermarks, no paywalls.
 
+This repository was modified from the original project by Eng. Ibrahim Konsowa: https://github.com/imkonsowa/resumeforfree
+
+It is part of a fully free project created to serve students at my university in Kafr El-Sheikh.
+
 ## How it works
 
 You open the site, pick a template, fill in your details, and download a PDF. No account required. Your data stays in your browser's `localStorage`.
