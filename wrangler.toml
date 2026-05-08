@@ -1,5 +1,5 @@
 account_id = "ca2fcb7eb8641a2d05d0e64b0b4c70ab"
-name = "resume-builder"
+name = "cvbuilder"
 main = ".output/server/index.mjs"
 compatibility_date = "2025-07-15"
 
